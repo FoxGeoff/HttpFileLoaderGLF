@@ -2,26 +2,35 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
-## Development server
+## Build a customer  file uploader based on Google Angular code: https://angular.io/guide/http#httpclient
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Check: Setup Material Framwork
+##  Step 1: Install Angular Material, Angular CDK and Angular Animations 
+* Run: npm install --save @angular/material @angular/cdk @angular/animations
+## Step 2: Configure animations
+* ``` import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; ```
+## Step 3: Import the component modules
+*Add:
+```
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
-## Code scaffolding
+@NgModule({
+  imports: [MatButtonModule, MatCheckboxModule],
+  exports: [MatButtonModule, MatCheckboxModule],
+})
+export class MyOwnCustomMaterialModule { }
+```
+* Note: ```Whichever approach you use, be sure to import the Angular Material modules after Angular's BrowserModule, as the import order matters for NgModules.```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Step 4 (required): Include a theme (styles.css)
+* Add: ```@import "~@angular/material/prebuilt-themes/indigo-pink.css";```
 
-## Build
+##  Step 5: Gesture Support 
+* Run: ```npm install --save hammerjs```
+* After installing, import it on your app's entry point (e.g. src/main.ts). import 'hammerjs';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Step 6 (Optional): Add Material Icons 
+* Add (index.html)
+```
+link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
