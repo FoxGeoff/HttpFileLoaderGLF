@@ -7,8 +7,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Check: Setup Material Framwork
 ##  Step 1: Install Angular Material, Angular CDK and Angular Animations 
 * Run: npm install --save @angular/material @angular/cdk @angular/animations
-## Step 2: Configure animations
-* ``` import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; ```
+## Step 2: Configure animations ( in feature module)
+* Run: ``` ng g m FileLoad --nospec --routing --dry-run ```
+``` 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  ...
+  imports: [BrowserAnimationsModule],
+  ...
+})
+export class PizzaPartyAppModule { }
+```
+
 ## Step 3: Import the component modules
 *Add:
 ```
@@ -34,3 +45,5 @@ export class MyOwnCustomMaterialModule { }
 ```
 link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
+# Add FLex Layout
+* Run: ```npm install @angular/flex-layout @angular/cdk --save``
