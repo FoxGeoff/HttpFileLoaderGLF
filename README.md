@@ -51,3 +51,6 @@ link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesh
 # Check Add an in-memory service
 * Run: ```ng g s InMemoryData --nospec --dry-run ```
 * Run: ```npm install angular-in-memory-web-api --save ```
+
+# Check: Add config service
+* Run: ```ng g s config --nospec --dry-run```
