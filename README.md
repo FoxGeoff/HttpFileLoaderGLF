@@ -47,3 +47,7 @@ link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesh
 ```
 # Add FLex Layout
 * Run: ```npm install @angular/flex-layout @angular/cdk --save``
+
+# Check Add an in-memory service
+* Run: ```ng g s InMemoryData --nospec --dry-run ```
+* Run: ```npm install angular-in-memory-web-api --save ```

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { FileLoadModule } from './file-load/file-load.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,9 +18,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     MaterialModule,
     FlexLayoutModule,
+    // Feature modules: 
     FileLoadModule,
-    //Most importantly, AppRoutingModule comes after the FileLoadModule
+    // importantly, AppRoutingModule comes after all Feature modules
     AppRoutingModule,
+    // import HttpClientModule after BrowserModule.
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
