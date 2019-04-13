@@ -54,3 +54,6 @@ link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesh
 
 # Check: Add config service
 * Run: ```ng g s config --nospec --dry-run```
+
+# Check: Add config component
+

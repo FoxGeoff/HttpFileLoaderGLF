@@ -7,12 +7,14 @@ import { MaterialModule } from './material/material.module';
 import { FileLoadModule } from './file-load/file-load.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfigComponent } from './config/config.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
