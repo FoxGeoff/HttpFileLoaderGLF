@@ -8,6 +8,11 @@ import { FileLoadModule } from './file-load/file-load.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigComponent } from './config/config.component';
+import { MessageService } from './shared/message.service';
+
+import { RequestCache, RequestCacheWithMap } from './shared/request-cache.service';
+import { InMemoryDataService } from './in-memory-data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 
 @NgModule({
@@ -26,8 +31,20 @@ import { ConfigComponent } from './config/config.component';
     AppRoutingModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {
+        dataEncapsulation: false,
+        passThruUnknownUrl: true,
+        put204: false // return entity after PUT/update
+      })
   ],
-  providers: [],
+  providers: [
+    MessageService,
+    { provide: RequestCache, useClass: RequestCacheWithMap },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
